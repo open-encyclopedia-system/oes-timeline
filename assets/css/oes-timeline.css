@@ -1,0 +1,70 @@
+.oes-timeline-container {
+    margin: 20px auto;
+    padding: 20px;
+    font-size: .9rem;
+}
+
+.oes-timeline-outer {
+    border-left: 2px solid #333;
+    margin-left: 40px;
+}
+
+.oes-timeline-year {
+    position: relative;
+    left: -56px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.oes-timeline-year::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: black;
+    border-radius: 999px;
+    border: none;
+    top: 3px;
+    margin-left: 10px;
+}
+
+.oes-timeline-event-wrapper {
+    position: relative;
+    margin: 0 0 20px 20px;
+    padding: 10px;
+}
+
+.oes-timeline-event {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.oes-timeline-event-title {
+    position: relative;
+    font-weight: bold;
+}
+
+.oes-timeline-event-title::after{
+    content: "\2014";
+    font-weight: 700;
+    font-size: 20px;
+    margin: 05px;
+}
+
+.oes-timeline-event::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 999px;
+    left: -27px;
+    top: 19px;
+}
+
+.oes-timeline-event.oes-timeline-range::before{
+    height: 100%;
+    top: -6px;
+    border-radius: 0;
+}
