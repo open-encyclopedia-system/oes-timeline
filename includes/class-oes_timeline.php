@@ -169,7 +169,8 @@ if (!class_exists('OES_Timeline')) :
 
                     $oes_timeline_years[] = $year;
                     $content .= '<div class="oes-timeline-year" id="oes_timeline_year_' . $year . '">' . $year . '</div>';
-
+                    
+                    ksort($yearData);
                     foreach($yearData as $date) {
                         foreach ($date as $event) {
 
