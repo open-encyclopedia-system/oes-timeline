@@ -4,8 +4,8 @@
  * Plugin Name: OES Timeline (OES Core Module)
  * Plugin URI: http://www.open-encyclopedia-system.org/
  * Description: Display a chronological sequence of events (post type that includes date fields) with a timeline.
- * Version: 1.0
- * Author: Maren Strobl, Freie Universität Berlin, Center für Digitale Systeme an der Universitätsbibliothek
+ * Version: 1.2.0
+ * Author: Maren Welterlich-Strobl, Freie Universität Berlin, Center für Digitale Systeme an der Universitätsbibliothek
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -26,7 +26,6 @@
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-
 add_action('oes/plugins_loaded', function () {
 
     /* check if OES Core Plugin is activated */
@@ -38,14 +37,25 @@ add_action('oes/plugins_loaded', function () {
     } else {
 
         /* exit early if OES Plugin was not completely initialized */
-        $oes = OES();
-        if (!$oes->initialized) return;
+        global $oes;
+        if (!$oes || !property_exists($oes, 'initialized') || !$oes->initialized) return;
 
-        include_once(__DIR__ . '/includes/admin/hooks-admin.php');
-        include_once(__DIR__ . '/includes/admin/class-timeline_options.php');
-        include_once(__DIR__ . '/includes/admin/class-timeline_options_categories.php');
-        include_once(__DIR__ . '/includes/class-oes_timeline.php');
+        include_once(__DIR__ . '/includes/admin/functions-admin.php');
+        include_once(__DIR__ . '/includes/admin/class-schema_timeline.php');
+        include_once(__DIR__ . '/includes/class-timeline.php');
         include_once(__DIR__ . '/includes/functions.php');
-        include_once(__DIR__ . '/includes/hooks.php');
+
+        add_action('wp_head','OES\Timeline\wp_head', 99);
+        add_filter('oes/schema_general', 'OES\Timeline\schema_enable', 10, 4);
+        add_filter('oes/schema_tabs', 'OES\Timeline\schema_tabs', 10, 2);
+        add_filter('oes/schema_options_single', 'OES\Timeline\schema_options_single', 10, 3);
+        add_action('oes/theme_archive_list', 'OES\Timeline\theme_archive_list');
+        add_action('wp_enqueue_scripts', 'OES\Timeline\enqueue_scripts');
+
+        /* blocks */
+        register_block_type(__DIR__ . '/includes/blocks/single/build');
+
+        add_shortcode('oes_timeline', 'OES\Timeline\html');
+        add_shortcode('oes_timeline_anchors', 'OES\Timeline\anchors_html');
     }
 }, 14);

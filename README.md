@@ -14,7 +14,7 @@ We are working on a detailed user manual and a technical function reference. Sup
 ### Dependencies
 
 OES Timeline depends on the OES Core Plugin:
-* OES Core, version 2.2., URL: https://github.com/open-encyclopedia-system/oes-core.
+* OES Core, version 2.3.0, URL: https://github.com/open-encyclopedia-system/oes-core.
 
 ### Installation
 
@@ -25,7 +25,7 @@ OES Timeline depends on the OES Core Plugin:
 5. (Optional) Download and activate the OES theme.
 6. Download and activate the OES Timeline module.
 
-If the installation was successful you will now see the menu "OES Settings" and its submenu "Timeline" inside the WordPress admin interface in the navigation menu on the left (as well as custom post types such as "Articles", "Contributors", "Glossary Entries", etc.). Navigate to "OES Settings" / "Data Model" and use the button "Reload from Plugin Config" to import the ACF fields (this will only work if you have admin rights).  The OES Timeline module and its functionalities are now available inside your WordPress installation.
+If the installation was successful you will now see the menu "OES Settings" and its submenu "Timeline" inside the WordPress admin interface in the navigation menu on the left. The OES Timeline module and its functionalities are now available inside your WordPress installation.
 
 You can start configuring by exploring the OES settings (documentation coming soon) or editing the model.json inside your project plugin.
 

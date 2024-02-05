@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "oes/timeline-single",
+  "version": "0.1.0",
+  "title": "Timeline for Post",
+  "category": "oes-schema",
+  "description": "Display the OES timeline for an OES post according to timeline settings.",
+  "keywords": [
+    "event",
+    "date",
+    "presentation"
+  ],
+  "supports": {
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "align": true,
+    "anchor": true,
+    "alignContent": true,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "alignText": true,
+    "fullHeight": true
+  },
+  "attributes": {
+    "detail": {
+      "type": "boolean",
+      "default": false
+    },
+    "labels": {
+      "type": "object"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}
