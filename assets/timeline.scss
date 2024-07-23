@@ -1,55 +1,54 @@
 $size: var(--oes-timeline-font-size);
 $color: var(--oes-timeline-color);
+$color2: var(--oes-timeline-color2);
+$backgroundColor: var(--oes-timeline-background);
+$yearColor: var(--oes-timeline-year);
 
 .oes-timeline-container {
   font-size: $size;
 }
 
 .oes-timeline-outer {
-  border-left: 2px solid $color;
-  margin-left: calc($size * 4);
+  border-left: 2px solid $color2;
+  margin-left: calc($size * 9);
 }
 
 .oes-timeline-year {
   position: relative;
   top: 0;
-  left: calc(-1 * $size * 4);
-  width: calc($size * 4);
+  left: calc(-1 * $size * 9);
+  width: 100%;
   margin-bottom: 10px;
   font-weight: bold;
+  color: $yearColor;
+  z-index: -1;
 }
 
 .oes-timeline-year::after {
   content: "";
   position: absolute;
-  top: calc($size / 2 - 1px);
-  right: calc(-1 * $size / 2 + 1px);
-  width: $size;
-  height: $size;
-  background: $color;
-  border-radius: 999px;
-  border: none;
+  top: 50%;
+  left: calc($size * 3 + 1px);
+  width: calc($size * 12);
+  height: 1px;
+  background: $backgroundColor;
 }
 
 .oes-timeline-event-wrapper {
   position: relative;
   margin: 0 0 calc($size / 2) $size;
-  padding: calc($size / 2);
+  padding: calc($size / 2) calc($size / 2) calc($size / 2) calc($size * 4);
 }
 
 .oes-timeline-event {
   display: flex;
   flex-direction: column;
   gap: calc($size / 2);
+  color: $color;
 
   .oes-timeline-event-title {
     position: relative;
     font-weight: bold;
-  }
-
-  .oes-timeline-event-title::after {
-    content: "\2014";
-    margin: 5px;
   }
 }
 
@@ -57,14 +56,49 @@ $color: var(--oes-timeline-color);
   content: "";
   position: absolute;
   width: $size;
-  height: 2px;
-  background: $color;
+  height: $size;
+  border-radius: 999px;
+  background: $color2;
   left: calc(-1 * $size / 2 - $size - 1px);
   top: calc($size + $size / 3);
+  z-index: 5;
 }
 
 .oes-timeline-event.oes-timeline-range::before {
   height: 100%;
   top: 0;
-  border-radius: 0;
+  border-radius: 999px;
+}
+
+.oes-timeline-event-container::before {
+  content: "";
+  position: absolute;
+  top: calc(11 * $size / 6);
+  left: calc(-1 * $size);
+  width: calc($size * 4);
+  height: 1px;
+  background: $backgroundColor;
+}
+
+.oes-timeline-event.oes-timeline-range .oes-timeline-event-container::before {
+  top: calc(13 * $size / 6);
+}
+
+.oes-timeline-single-post {
+
+  .oes-timeline-outer {
+    margin-left: $size;
+  }
+
+  .oes-timeline-year {
+    display: none;
+  }
+
+  .oes-timeline-event-wrapper {
+    padding-left: calc($size * 2);
+  }
+
+  .oes-timeline-event-container::before {
+    width: calc($size * 2);
+  }
 }

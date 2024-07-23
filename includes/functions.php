@@ -11,7 +11,7 @@ namespace OES\Timeline;
  */
 function html(array $args = []): string
 {
-    global $oes_post, $oes_timeline_temp; //TODO temporary - why does WordPress try to render this in admin mode?
+    global $oes_post, $oes_timeline_temp; //@oesDevelopment temporary - why does WordPress try to render this in admin mode?
     if ($oes_post || $oes_timeline_temp || ($args['force'] ?? false)) {
         if (!isset($args['ids'])) {
             if (!isset($args['post_type'])) return '';
@@ -129,7 +129,7 @@ function theme_archive_list(): void
     /* replace archive by shortcode */
     global $oes_archive_displayed;
     if ($replaceArchive) {
-        global $oes_timeline_temp; //TODO temporary - why does WordPress try to render this in admin mode?
+        global $oes_timeline_temp; //@oesDevelopment temporary - why does WordPress try to render this in admin mode?
         $oes_timeline_temp = true;
         $args = ['post_type' => $post_type];
         echo html($args);
@@ -150,7 +150,12 @@ function enqueue_scripts(): void
 }
 
 
-//TODO
+/**
+ * Get the timeline representation.
+ *
+ * @param array $args Additional arguments.
+ * @return string Return the html representation of a timeline.
+ */
 function get_post_timeline_html($args = []): string
 {
 
@@ -164,7 +169,7 @@ function get_post_timeline_html($args = []): string
             foreach ($options as $option) {
                 $fieldValue = oes_get_field($option, $oes_post->object_ID);
                 if(!empty($fieldValue) && is_array($fieldValue))
-                    $ids = array_merge($fieldValue, $ids); //TODO parent fields...?
+                    $ids = array_merge($fieldValue, $ids);
             }
             if (!empty($ids)) {
 
@@ -182,7 +187,7 @@ function get_post_timeline_html($args = []): string
                         ) .
                         '</div>';
 
-                    return '<div class="oes-timeline-container">' .
+                    return '<div class="oes-timeline-container oes-timeline-single-post">' .
                         (empty($header) ? '' : '<h5>' . $header . '</h5>') .
                         $content .
                         '</div>';

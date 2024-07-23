@@ -4,20 +4,62 @@ namespace OES\Timeline;
 
 
 /**
+ * Add settings page.
+ *
+ * @param $adminMenuPages
+ * @return mixed
+ */
+function admin_menu_pages($adminMenuPages)
+{
+    $adminMenuPages['088_timeline'] = [
+        'subpage' => true,
+        'page_parameters' => [
+            'page_title' => 'Timeline',
+            'menu_title' => 'Timeline',
+            'menu_slug' => 'oes_timeline',
+            'position' => 93,
+            'parent_slug' => 'oes_settings'
+        ],
+        'view_file_name_full_path' => (__DIR__ . '/views/view-settings-timeline.php')
+    ];
+    return $adminMenuPages;
+}
+
+
+/**
  * Add color for timeline css.
  *
  * @return void
  */
 function wp_head(): void
 {
-    global $oes; ?>
+    global $oes;
+
+    /* prepare timeline colors */
+    $defaults = $oes->block_theme ? [
+        'font-size' => 'var(--wp--preset--font-size--small)',
+        'color' => 'var(--wp--preset--color--text)',
+        'color2' => 'var(--wp--preset--color--inactive)',
+        'background'=> 'var(--wp--preset--color--background)',
+        'year'=> 'var(--wp--preset--color--year)',
+    ] :
+        [
+            'font-size' => '16px',
+            'color' => 'var(--oes-text-black)',
+            'color2' => 'var(--oes-text-black)',
+            'background'=> 'var(--oes-text-black)',
+            'year'=> 'var(--oes-text-black)',
+        ];
+
+    $colorStyle = '';
+    $colors = json_decode(get_option('oes_timeline', ''), true);
+    foreach($defaults as $id => $defaultValue)
+        $colorStyle .= '--oes-timeline-' . $id . ': ' . ($colors[$id] ?? $defaultValue) . ';';
+
+    ?>
     <style type="text/css" id="oes-colors">
     body {
-    <?php echo $oes->block_theme ?
-'--oes-timeline-color:var(--wp--preset--color--text);' .
-'--oes-timeline-font-size:var(--wp--preset--font-size--small);' :
-'--oes-timeline-color:var(--oes-text-black);' .
-'--oes-timeline-font-size:16px;'; ?>
+    <?php echo $colorStyle; ?>
     }
     </style><?php
 }

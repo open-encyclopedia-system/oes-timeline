@@ -207,7 +207,10 @@ if (!class_exists('Timeline')) :
                             if (!empty($label) && !empty($name))
                                 $content .= sprintf('<div class="oes-timeline-event-wrapper">' .
                                     '<div class="oes-timeline-event %s">' .
-                                    '<div><span class="oes-timeline-event-title"><a href = "%s">%s</a></span>%s</div>' .
+                                    '<div class="oes-timeline-event-container">' .
+                                    '<span class="oes-timeline-event-title"><a href = "%s">%s</a></span>' .
+                                    '<div class="oes-timeline-event-text">%s</div>' .
+                                    '</div>' .
                                     '</div>' .
                                     '</div>',
                                     ($event['range'] ? 'oes-timeline-range' : ''),

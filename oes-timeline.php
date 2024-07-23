@@ -4,8 +4,9 @@
  * Plugin Name: OES Timeline (OES Core Module)
  * Plugin URI: http://www.open-encyclopedia-system.org/
  * Description: Display a chronological sequence of events (post type that includes date fields) with a timeline.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: Maren Welterlich-Strobl, Freie Universität Berlin, Center für Digitale Systeme an der Universitätsbibliothek
+ * Author URI: https://www.cedis.fu-berlin.de/cedis/mitarbeiter/beschaeftigte/mstrobl.html
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -41,10 +42,12 @@ add_action('oes/plugins_loaded', function () {
         if (!$oes || !property_exists($oes, 'initialized') || !$oes->initialized) return;
 
         include_once(__DIR__ . '/includes/admin/functions-admin.php');
+        include_once(__DIR__ . '/includes/admin/class-options.php');
         include_once(__DIR__ . '/includes/admin/class-schema_timeline.php');
         include_once(__DIR__ . '/includes/class-timeline.php');
         include_once(__DIR__ . '/includes/functions.php');
 
+        add_filter('oes/admin_menu_pages', 'OES\Timeline\admin_menu_pages');
         add_action('wp_head','OES\Timeline\wp_head', 99);
         add_filter('oes/schema_general', 'OES\Timeline\schema_enable', 10, 4);
         add_filter('oes/schema_tabs', 'OES\Timeline\schema_tabs', 10, 2);
@@ -54,6 +57,7 @@ add_action('oes/plugins_loaded', function () {
 
         /* blocks */
         register_block_type(__DIR__ . '/includes/blocks/single/build');
+        register_block_type(__DIR__ . '/includes/blocks/archive/build');
 
         add_shortcode('oes_timeline', 'OES\Timeline\html');
         add_shortcode('oes_timeline_anchors', 'OES\Timeline\anchors_html');
