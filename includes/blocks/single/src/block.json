@@ -5,12 +5,8 @@
   "version": "0.1.0",
   "title": "Timeline for Post",
   "category": "oes-schema",
-  "description": "Display the OES timeline for an OES post according to timeline settings.",
-  "keywords": [
-    "event",
-    "date",
-    "presentation"
-  ],
+  "description": "Display the OES timeline for a post according to timeline settings.",
+  "keywords": ["event", "date", "presentation"],
   "supports": {
     "spacing": {
       "margin": true,
@@ -19,18 +15,16 @@
     },
     "typography": {
       "fontSize": true,
-      "lineHeight": true
+      "lineHeight": true,
+      "textAlign": true
     },
-    "align": true,
-    "anchor": true,
-    "alignContent": true,
     "color": {
       "text": true,
       "background": true,
       "link": true
     },
-    "alignText": true,
-    "fullHeight": true
+    "align": true,
+    "anchor": true
   },
   "attributes": {
     "detail": {
@@ -38,7 +32,11 @@
       "default": false
     },
     "labels": {
-      "type": "object"
+      "type": "object",
+      "default": {
+        "start": "Start",
+        "end": "End"
+      }
     }
   },
   "editorScript": "file:./index.js",

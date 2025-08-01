@@ -15,101 +15,61 @@ if (!class_exists('Options')) :
      */
     class Options extends \OES\Admin\Tools\Module
     {
-
+        /** @inheritdoc */
         public string $option_prefix = 'oes_timeline';
+
+        /** @inheritdoc */
         public bool $encoded = true;
+
+        /** @inheritdoc */
         public bool $post_type_dependent = false;
 
-
-        //Implement parent
+        /** @inheritdoc */
         function information_html(): string
         {
             return '<div class="oes-tool-information-wrapper"><p>' .
-                __('Choose the timeline colors (use css variables or hex notation).' , 'oes') .
-                '</p><p>' .
-                __('To configure a timeline for an OES post type use the OES schema options.' , 'oes') .
+                __('Choose the timeline colors (use css variables or hex notation).' , 'oes-timeline') .
                 '</p></div>';
         }
 
-
-        //Overwrite parent
+        /** @inheritdoc */
         function set_table_data_for_display()
         {
             $option = json_decode(get_option('oes_timeline', ''), true);
-            $this->table_data = [
-                [
-                    'rows' => [
-                        [
-                        'cells' => [
-                            [
-                                'type' => 'th',
-                                'value' => '<strong>' . __('Main Color', 'oes') .
-                                    '</strong><code class="oes-object-identifier">-oes-timeline-color</code>'
-                            ],
-                            [
-                                'class' => 'oes-table-transposed',
-                                'value' => oes_html_get_form_element('text',
-                                    'oes_timeline[color]',
-                                    'oes_timeline-color',
-                                    $option['color'] ?? 'var(--wp--preset--color--text)')
-                            ]
-                        ]
-                    ],
-                        [
-                            'cells' => [
-                                [
-                                    'type' => 'th',
-                                    'value' => '<strong>' . __('Secondary Color', 'oes') .
-                                        '</strong><code class="oes-object-identifier">-oes-timeline-color2</code>'
-                                ],
-                                [
-                                    'class' => 'oes-table-transposed',
-                                    'value' => oes_html_get_form_element('text',
-                                        'oes_timeline[color2]',
-                                        'oes_timeline-color2',
-                                        $option['color2'] ?? 'var(--wp--preset--color--inactive)')
-                                ]
-                            ]
-                        ],
-                        [
-                            'cells' => [
-                                [
-                                    'type' => 'th',
-                                    'value' => '<strong>' . __('Background Color', 'oes') .
-                                        '</strong><code class="oes-object-identifier">-oes-timeline-background</code>'
-                                ],
-                                [
-                                    'class' => 'oes-table-transposed',
-                                    'value' => oes_html_get_form_element('text',
-                                        'oes_timeline[background]',
-                                        'oes_timeline-background',
-                                        $option['background'] ?? 'var(--wp--preset--color--inactive)')
-                                ]
-                            ]
-                        ],
-                        [
-                            'cells' => [
-                                [
-                                    'type' => 'th',
-                                    'value' => '<strong>' . __('Year Color', 'oes') .
-                                        '</strong><code class="oes-object-identifier">-oes-timeline-year</code>'
-                                ],
-                                [
-                                    'class' => 'oes-table-transposed',
-                                    'value' => oes_html_get_form_element('text',
-                                        'oes_timeline[year]',
-                                        'oes_timeline-year',
-                                        $option['year'] ?? 'var(--wp--preset--color--inactive)')
-                                ]
-                            ]
-                        ]
-                    ]
+            $options = [
+                'color' => [
+                    'title' => __('Events', 'oes-timeline'),
+                    'default' => 'var(--wp--preset--color--text)'
+                ],
+                'color2' => [
+                    'title' => __('Lines', 'oes-timeline'),
+                    'default' => 'var(--wp--preset--color--inactive)'
+                ],
+                'background' => [
+                    'title' => __('Icons', 'oes-timeline'),
+                    'default' => 'var(--wp--preset--color--inactive)'
+                ],
+                'year' => [
+                    'title' => __('Years', 'oes-timeline'),
+                    'default' => 'var(--wp--preset--color--inactive)'
                 ]
             ];
+
+            foreach($options as $key => $singleOption) {
+                $this->add_table_row(
+                    [
+                        'title' => $singleOption['title'] ?? $key,
+                        'key' => 'oes_timeline[' . $key . ']',
+                        'value' => $option[$key] ?? ($singleOption['default'] ?? '')
+                    ],
+                    [
+                        'subtitle' => '<code class="oes-object-identifier">--oes-timeline-' . $key . '</code>'
+                    ]
+                );
+            }
         }
     }
 
     // initialize
     \OES\Admin\Tools\register_tool('\OES\Timeline\Options', 'timeline');
-
 endif;

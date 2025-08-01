@@ -39,28 +39,33 @@ export default function Edit({attributes, setAttributes, isSelected}) {
                                 <div className="oes-timeline-year" id="oes_timeline_year_1880">1880</div>
                                 <div className="oes-timeline-event-wrapper">
                                     <div className="oes-timeline-event ">
-                                        <div><span className="oes-timeline-event-title"><a
-                                            href="http://localhost/oes/events/duden-first-published/">1880</a></span>First
-                                            publication of Duden Wörterbuch
+                                        <div>
+                                            <span className="oes-timeline-event-title">
+                                                <a href="http://localhost/oes/events/duden-first-published/">1880</a>
+                                            </span>
+                                            <p>First publication of Duden Wörterbuch</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="oes-timeline-year" id="oes_timeline_year_1918">1918</div>
                                 <div className="oes-timeline-event-wrapper">
                                     <div className="oes-timeline-event oes-timeline-range">
-                                        <div><span className="oes-timeline-event-title"><a
-                                            href="http://localhost/oes/events/weimar-republic/">1918 – 1933</a></span>Weimar
-                                            Republic
+                                        <div>
+                                            <span className="oes-timeline-event-title">
+                                                <a href="http://localhost/oes/events/weimar-republic/">1918 – 1933</a>
+                                            </span>
+                                            <p>Weimar Republic</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="oes-timeline-year" id="oes_timeline_year_1951">1951</div>
                                 <div className="oes-timeline-event-wrapper">
                                     <div className="oes-timeline-event ">
-                                        <div><span className="oes-timeline-event-title"><a
-                                            href="http://localhost/oes/events/leipzig-duden/">1951</a></span>First East-German
-                                            Duden
-                                            edition published
+                                        <div>
+                                            <span className="oes-timeline-event-title">
+                                                <a href="http://localhost/oes/events/leipzig-duden/">1951</a>
+                                            </span>
+                                            <p>First East-German Duden edition published</p>
                                         </div>
                                     </div>
                                 </div>
@@ -74,28 +79,33 @@ export default function Edit({attributes, setAttributes, isSelected}) {
                                 <div className="oes-timeline-year" id="oes_timeline_year_1880">1880</div>
                                 <div className="oes-timeline-event-wrapper">
                                     <div className="oes-timeline-event ">
-                                        <div><span className="oes-timeline-event-title"><a
-                                            href="http://localhost/oes/events/duden-first-published/">1880</a></span>First
-                                            publication of Duden Wörterbuch
+                                        <div>
+                                            <span className="oes-timeline-event-title">
+                                                <a href="http://localhost/oes/events/duden-first-published/">1880</a>
+                                            </span>
+                                            <p>First publication of Duden Wörterbuch</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="oes-timeline-year" id="oes_timeline_year_1918">1918</div>
                                 <div className="oes-timeline-event-wrapper">
                                     <div className="oes-timeline-event oes-timeline-range">
-                                        <div><span className="oes-timeline-event-title"><a
-                                            href="http://localhost/oes/events/weimar-republic/">1918 – 1933</a></span>Weimar
-                                            Republic
+                                        <div>
+                                            <span className="oes-timeline-event-title">
+                                                <a href="http://localhost/oes/events/weimar-republic/">1918 – 1933</a>
+                                            </span>
+                                            <p>Weimar Republic</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="oes-timeline-year" id="oes_timeline_year_1951">1951</div>
                                 <div className="oes-timeline-event-wrapper">
                                     <div className="oes-timeline-event ">
-                                        <div><span className="oes-timeline-event-title"><a
-                                            href="http://localhost/oes/events/leipzig-duden/">1951</a></span>First East-German
-                                            Duden
-                                            edition published
+                                        <div>
+                                            <span className="oes-timeline-event-title">
+                                                <a href="http://localhost/oes/events/leipzig-duden/">1951</a>
+                                            </span>
+                                            <p>First East-German Duden edition published</p>
                                         </div>
                                     </div>
                                 </div>

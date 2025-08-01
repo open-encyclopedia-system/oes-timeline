@@ -77,6 +77,10 @@
   top: calc(13 * var(--oes-timeline-font-size) / 6);
 }
 
+.oes-timeline-event-text {
+  display: block;
+}
+
 .oes-timeline-single-post .oes-timeline-outer {
   margin-left: var(--oes-timeline-font-size);
 }

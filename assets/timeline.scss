@@ -84,6 +84,10 @@ $yearColor: var(--oes-timeline-year);
   top: calc(13 * $size / 6);
 }
 
+.oes-timeline-event-text {
+  display: block;
+}
+
 .oes-timeline-single-post {
 
   .oes-timeline-outer {

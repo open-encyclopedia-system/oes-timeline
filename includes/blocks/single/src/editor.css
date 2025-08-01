@@ -1,0 +1,89 @@
+.oes-timeline-container {
+  font-size: 1rem;
+}
+.oes-timeline-container .oes-timeline-outer {
+  border-left: 2px solid grey;
+  margin-left: 4rem;
+}
+.oes-timeline-container .oes-timeline-year {
+  color: grey;
+  font-weight: 700;
+  left: -4rem;
+  margin-bottom: 10px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.oes-timeline-container .oes-timeline-year::after {
+  background: grey;
+  content: "";
+  height: 1px;
+  left: calc(3rem + 1px);
+  position: absolute;
+  top: 50%;
+  width: 12rem;
+}
+.oes-timeline-container .oes-timeline-event-wrapper {
+  margin: 0 0 0.5rem 1rem;
+  padding: 0.5rem;
+  position: relative;
+}
+.oes-timeline-container .oes-timeline-event {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.oes-timeline-container .oes-timeline-event p {
+  margin: 0;
+}
+.oes-timeline-container .oes-timeline-event .oes-timeline-event-title {
+  font-weight: 700;
+  position: relative;
+}
+.oes-timeline-container .oes-timeline-event::before {
+  background: grey;
+  border-radius: 999px;
+  content: "";
+  height: 1rem;
+  left: calc(-1.5rem - 1px);
+  position: absolute;
+  top: 2.3rem;
+  width: 1rem;
+  z-index: 5;
+}
+.oes-timeline-container .oes-timeline-event.oes-timeline-range::before {
+  border-radius: 999px;
+  height: 100%;
+  top: 0;
+}
+.oes-timeline-container .oes-timeline-event.oes-timeline-range .oes-timeline-event-container::before {
+  top: 2.1666666667rem;
+}
+.oes-timeline-container .oes-timeline-event-container::before {
+  background: grey;
+  content: "";
+  height: 1px;
+  left: -1rem;
+  position: absolute;
+  top: 1.8333333333rem;
+  width: 4rem;
+}
+.oes-timeline-container .oes-timeline-event-text {
+  display: block;
+}
+.oes-timeline-container.oes-timeline-single-post .oes-timeline-outer {
+  margin-left: 1rem;
+}
+.oes-timeline-container.oes-timeline-single-post .oes-timeline-year {
+  display: none;
+}
+.oes-timeline-container.oes-timeline-single-post .oes-timeline-event-wrapper {
+  padding-left: 2rem;
+}
+.oes-timeline-container.oes-timeline-single-post .oes-timeline-event-container::before {
+  width: 2rem;
+}
+
+/*# sourceMappingURL=editor.css.map */
