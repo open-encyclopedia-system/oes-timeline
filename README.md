@@ -48,14 +48,3 @@ License as published by the Free Software Foundation; either version 2 of the Li
 version.
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
 warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-# Changelog
-
-## 1.3.0
-- improved block
-- updated module handling
-- introducing Event class
-
-## 1.2.1
-- new - change design
-- new - add admin configurations for timeline colors
