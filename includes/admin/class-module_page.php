@@ -81,7 +81,7 @@ if (!class_exists('Timeline_Module_Page')) :
                     'id' => 'oes_timeline_design',
                     'title' => 'Design',
                     'content' =>  '<p>' .
-                        __('You can change the design by adding custom CSS to your project, or by setting colours in ',
+                        __('You can change the design by adding custom CSS to your application, or by setting colours in ',
                             'oes-timeline') . ' ' .
                         '<a href="' . esc_url(admin_url('admin.php?page=oes_timeline')) . '">' .
                         __('OES Settings / Timeline', 'oes-timeline') . '</a>' . '.' .

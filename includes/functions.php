@@ -97,7 +97,7 @@ function html(array $args = []): string
 /**
  * Get the timeline HTML representation for a list of post IDs.
  *
- * Resolves a project-specific Timeline class dynamically and delegates rendering.
+ * Resolves an application-specific Timeline class dynamically and delegates rendering.
  *
  * @param array $ids Array of WordPress post IDs.
  * @param array $args Array of additional arguments.
