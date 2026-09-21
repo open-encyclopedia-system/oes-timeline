@@ -51,7 +51,7 @@ if (!class_exists('Timeline')) :
          */
         protected function set_event_class(): void
         {
-            $this->event_class = oes_get_project_class_name('\OES\Timeline\Event');
+            $this->event_class = oes_get_application_class_name('\OES\Timeline\Event');
         }
 
         /**

@@ -143,11 +143,12 @@ if (!class_exists('Event')) :
          */
         protected function set_labels(): void
         {
-            $startLabel = $this->get_field('label');
-            $endLabel = $this->get_field('label');
+            //TODO $label = $this->get_field('label');
+            $startLabel = $this->get_field('start_label');
+            $endLabel = $this->get_field('end_label');
 
             $this->set_start_label($startLabel);
-            $this->set_end_label(empty($startLabel) ? $endLabel : 'hidden');
+            $this->set_end_label(empty($endLabel) ? 'hidden' :  $endLabel);
 
             $this->label = $this->generate_label();
         }

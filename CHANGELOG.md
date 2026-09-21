@@ -1,5 +1,7 @@
-
 # Changelog
+
+## 1.4.0
+- compatible with OES 3.0.0
 
 ## 1.3.0
 - improved block

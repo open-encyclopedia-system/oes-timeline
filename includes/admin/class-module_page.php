@@ -1,7 +1,5 @@
 <?php
 
-namespace OES\Monadic;
-
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 if (!class_exists('\OES\Admin\Module_Page')) oes_include('admin/pages/class-module_page.php');

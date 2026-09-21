@@ -9,9 +9,9 @@ namespace OES\Timeline;
  * Plugin Name:        OES Timeline (OES Core Module)
  * Plugin URI:         https://www.open-encyclopedia-system.org/
  * Description:        Display a chronological sequence of events (post type including date fields) with a timeline. Requires OES Core.
- * Version:            1.3.0
- * Author:             Maren Welterlich-Strobl, Freie Universität Berlin, FUB-IT
- * Author URI:         https://www.it.fu-berlin.de/die-fub-it/mitarbeitende/mstrobl.html
+ * Version:            1.4.0
+ * Author:             Maren Welterlich-Strobl, Freie Universität Berlin, FUB-IT, Digitale Forschungsinfrastrukturen
+ * Author URI:         https://www.fu-berlin.de/
  * Requires at least:  6.5
  * Tested up to:       6.8.2
  * Requires PHP:       8.1

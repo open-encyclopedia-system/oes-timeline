@@ -37,12 +37,12 @@ If you are interested in contributing to OES development, please get in touch:
 **info@open-encyclopedia-system.org**
 
 ## Credits
-Developed by **Digitale Infrastrukturen**, Freie Universität Berlin (FUB IT),  
+Developed by **Digitale Infrastrukturen**, Freie Universität Berlin (FUB-IT),  
 with support from the **German Research Foundation (DFG)**.
 
 ## Licencing
 Copyright (C) 2025
-Freie Universität Berlin, FUB IT, Digitale Infrastrukturen
+Freie Universität Berlin, FUB-IT, Digitale Infrastrukturen
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public
 License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later
 version.

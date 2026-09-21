@@ -110,7 +110,7 @@ function get_html_representation(array $ids = [], array $args = []): string
         return '';
     }
 
-    $class = oes_get_project_class_name('\OES\Timeline\Timeline', 'OES_Timeline');
+    $class = oes_get_application_class_name('\OES\Timeline\Timeline', 'OES_Timeline');
     $timeline = new $class($ids, $args);
     return $timeline->html();
 }
